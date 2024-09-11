@@ -41,6 +41,7 @@ const inputTags = document.getElementById("input-tags");
 const listaTags = document.getElementById("lista-tags");
 
 
+
 listaTags.addEventListener("click", (evento) => {
     if (evento.target.classList.contains("remove-tag")) {
         const tagQueQueremosRemover = evento.target.parentElement;
@@ -112,4 +113,18 @@ botaoPublicar.addEventListener("click", async (evento) => {
         alert("Deu tudo errado!");
     }
 
+})
+
+const botaoDescartar = document.querySelector("botao-descartar");
+
+botaoDescartar.addEventListener("click", (evento) => {
+    evento.preventDefault();
+
+    const formulario = document.querySelector("form");
+    formulario.reset();
+
+    imagemPrincipal.src = "./img/imagem1.png";
+    nomeDaImagem.textContent = "image_projeto.png";
+
+    listaTags.innerHTML = "";
 })
